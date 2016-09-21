@@ -30,6 +30,7 @@ Description: message queue for cura based on protobuf (shared library)
  between Cura and its backend and similar code.
 
 Package: python3-libarcus
+Section: python
 Architecture: any
 Depends: libarcus (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends} ${python3:Depends}
 Description: message queue for cura based on protobuf (python bindings)
