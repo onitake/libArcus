@@ -1,0 +1,39 @@
+Source: libarcus
+Priority: optional
+Maintainer: Gregor Riepl <onitake@gmail.com>
+Build-Depends: debhelper (>= 9), dh-python, cmake (>=2.8.12),
+ libprotobuf-dev (>=3.0.0), libprotoc-dev (>=3.0.0),
+ python3-dev (>=3.4.0), python3-sip-dev
+Standards-Version: 3.9.8
+Section: libs
+Homepage: https://github.com/Ultimaker/libArcus
+#Vcs-Git: https://anonscm.debian.org/collab-maint/libarcus.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/libarcus.git
+
+Package: libarcus-dev
+Section: libdevel
+Architecture: any
+Depends: libarcus (= ${binary:Version}), ${misc:Depends}
+Description: message queue for Cura based on protobuf (development files)
+ This library contains C++ code and Python3 bindings for creating a socket
+ in a thread and using this socket to send and receive messages based on
+ the Protocol Buffers library. It is designed to facilitate the communication
+ between Cura and its backend and similar code.
+
+Package: libarcus
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: message queue for Cura based on protobuf (shared library)
+ This library contains C++ code and Python3 bindings for creating a socket
+ in a thread and using this socket to send and receive messages based on
+ the Protocol Buffers library. It is designed to facilitate the communication
+ between Cura and its backend and similar code.
+
+Package: python3-libarcus
+Architecture: any
+Depends: libarcus (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends} ${python3:Depends}
+Description: message queue for Cura based on protobuf (python bindings)
+ This library contains C++ code and Python3 bindings for creating a socket
+ in a thread and using this socket to send and receive messages based on
+ the Protocol Buffers library. It is designed to facilitate the communication
+ between Cura and its backend and similar code.
