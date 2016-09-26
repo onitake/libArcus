@@ -1,7 +1,7 @@
 Source: libarcus
 Priority: optional
 Maintainer: Gregor Riepl <onitake@gmail.com>
-Build-Depends: debhelper (>= 9), cmake (>=2.8.12), dh-python,
+Build-Depends: debhelper (>= 9), cmake (>=2.8.12), dh-python, quilt,
  libprotobuf-dev (>=3.0.0), libprotoc-dev (>=3.0.0), protobuf-compiler (>=3.0.0),
  python3-all-dev, python3-sip-dev
 Standards-Version: 3.9.8
