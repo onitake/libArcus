@@ -215,6 +215,17 @@ int PythonMessage::repeatedMessageCount(const std::string& field_name) const
     return _reflection->FieldSize(*_message, field);
 }
 
+PythonMessage* Arcus::PythonMessage::getMessage(const std::string& field_name)
+{
+    auto field = _descriptor->FindFieldByName(field_name);
+    if(!field)
+    {
+        PyErr_SetString(PyExc_AttributeError, field_name.c_str());
+        return nullptr;
+    }
+    return new PythonMessage(_reflection->MutableMessage(_message, field));
+}
+
 PythonMessage* Arcus::PythonMessage::getRepeatedMessage(const std::string& field_name, int index)
 {
     auto field = _descriptor->FindFieldByName(field_name);
@@ -238,7 +249,6 @@ int Arcus::PythonMessage::getEnumValue(const std::string& enum_value) const
     auto field = _descriptor->FindEnumValueByName(enum_value);
     if(!field)
     {
-        PyErr_SetString(PyExc_AttributeError, enum_value.c_str());
         return -1;
     }
 

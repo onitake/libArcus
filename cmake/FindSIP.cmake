@@ -24,6 +24,11 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+if(APPLE)
+    # Workaround for broken FindPythonLibs. It will always find Python 2.7 libs on OSX
+    set(CMAKE_FIND_FRAMEWORK LAST)
+endif()
+
 find_package(PythonInterp 3.4.0 REQUIRED)
 find_package(PythonLibs 3.4.0 REQUIRED)
 
@@ -43,7 +48,6 @@ ELSE(SIP_VERSION)
     STRING(REGEX REPLACE ".*\nsip_bin:([^\n]+).*$" "\\1" SIP_BINARY_PATH ${sip_config})
     STRING(REGEX REPLACE ".*\ndefault_sip_dir:([^\n]+).*$" "\\1" SIP_DEFAULT_SIP_DIR ${sip_config})
     STRING(REGEX REPLACE ".*\nsip_inc_dir:([^\n]+).*$" "\\1" SIP_INCLUDE_DIR ${sip_config})
-    STRING(REGEX REPLACE ".*\nsip_mod_dir:([^\n]+).*$" "\\1" SIP_MOD_DIR ${sip_config})
     SET(SIP_FOUND TRUE)
   ENDIF(sip_config)
 
