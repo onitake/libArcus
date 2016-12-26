@@ -1,6 +1,6 @@
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -59,8 +59,6 @@
+@@ -55,8 +55,6 @@
  set(ARCUS_VERSION 1.1.0)
  set(ARCUS_SOVERSION 3)
  
