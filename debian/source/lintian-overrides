@@ -1,0 +1,4 @@
+# Upstream uses "libArcus.so" while Debian prefers
+# that libarcus should contain "libarcus.so".
+# We prefer upstream in this case.
+libarcus: package-name-doesnt-match-sonames
