@@ -11,7 +11,7 @@ Homepage: https://github.com/Ultimaker/libArcus
 Vcs-Git: https://github.com/onitake/libArcus
 Vcs-Browser: https://github.com/onitake/libArcus
 
-Package: libarcus
+Package: libarcus3
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: message queue for Cura based on protobuf (shared library)
@@ -23,7 +23,7 @@ Description: message queue for Cura based on protobuf (shared library)
 Package: libarcus-dev
 Section: libdevel
 Architecture: any
-Depends: libarcus (= ${binary:Version}), ${misc:Depends}
+Depends: libarcus3 (= ${binary:Version}), ${misc:Depends}
 Description: message queue for Cura based on protobuf (development files)
  This library contains C++ code and Python3 bindings for creating a socket
  in a thread and using this socket to send and receive messages based on
@@ -33,7 +33,7 @@ Description: message queue for Cura based on protobuf (development files)
 Package: python3-arcus
 Section: python
 Architecture: any
-Depends: libarcus (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}, ${python3:Depends}
+Depends: libarcus3 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}, ${python3:Depends}
 Description: message queue for Cura based on protobuf (python bindings)
  This library contains C++ code and Python3 bindings for creating a socket
  in a thread and using this socket to send and receive messages based on
