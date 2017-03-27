@@ -1,3 +1,7 @@
+Author: Gregor Riepl <onitake@gmail.com>
+Description: Remove RPATH from build flags.
+  It's not needed on Linux and may cause maintenance problems.
+  See: https://wiki.debian.org/RpathIssue
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -55,8 +55,6 @@
