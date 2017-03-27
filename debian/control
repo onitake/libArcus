@@ -19,6 +19,7 @@ Description: message queue for Cura based on protobuf (shared library)
  in a thread and using this socket to send and receive messages based on
  the Protocol Buffers library. It is designed to facilitate the communication
  between Cura and its backend and similar code.
+ This package contains the shared library.
 
 Package: libarcus-dev
 Section: libdevel
@@ -29,6 +30,7 @@ Description: message queue for Cura based on protobuf (development files)
  in a thread and using this socket to send and receive messages based on
  the Protocol Buffers library. It is designed to facilitate the communication
  between Cura and its backend and similar code.
+ This package contains C++ headers and other development files.
 
 Package: python3-arcus
 Section: python
@@ -39,3 +41,4 @@ Description: message queue for Cura based on protobuf (Python bindings)
  in a thread and using this socket to send and receive messages based on
  the Protocol Buffers library. It is designed to facilitate the communication
  between Cura and its backend and similar code.
+ This package contains the Python 3 bindings.
