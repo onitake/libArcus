@@ -34,7 +34,7 @@ Package: python3-arcus
 Section: python
 Architecture: any
 Depends: libarcus3 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}, ${python3:Depends}
-Description: message queue for Cura based on protobuf (python bindings)
+Description: message queue for Cura based on protobuf (Python bindings)
  This library contains C++ code and Python3 bindings for creating a socket
  in a thread and using this socket to send and receive messages based on
  the Protocol Buffers library. It is designed to facilitate the communication
