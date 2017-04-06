@@ -293,6 +293,7 @@ namespace Arcus
                         // Communicate to the other side that we want to close.
                         platform_socket.writeInt32(SOCKET_CLOSE);
                         // Disable further writing to the socket.
+                        error(ErrorCode::Debug, "We got a request to close the socket.");
                         platform_socket.shutdown(PlatformSocket::ShutdownDirection::ShutdownWrite);
 
                         // Wait until we receive confirmation from the other side to actually close.
@@ -324,6 +325,7 @@ namespace Arcus
                         // in order (which should be guaranteed by TCP).
                     }
 
+                    error(ErrorCode::Debug, "Closing socket because other side requested close.");
                     platform_socket.close();
                     next_state = SocketState::Closed;
                     break;
@@ -551,7 +553,7 @@ namespace Arcus
         stream.SetTotalBytesLimit(message_size_maximum, message_size_warning);
         if(!message->ParseFromCodedStream(&stream))
         {
-            error(ErrorCode::ParseFailedError, "Failed to parse message");
+            error(ErrorCode::ParseFailedError, "Failed to parse message:" + std::string(wire_message->data));
             return;
         }
 
