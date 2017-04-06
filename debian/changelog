@@ -1,5 +1,5 @@
-libarcus (2.3.1-1) UNRELEASED; urgency=medium
+libarcus (2.4.0-1) UNRELEASED; urgency=medium
 
   * Initial Debian release. Closes: #706656
 
- -- Gregor Riepl <onitake@gmail.com>  Mon, 26 Dec 2016 18:21:10 +0100
+ -- Gregor Riepl <onitake@gmail.com>  Fri, 07 Apr 2017 00:21:17 +0200
